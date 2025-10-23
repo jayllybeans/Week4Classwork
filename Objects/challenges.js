@@ -85,22 +85,21 @@ printArtGrade(studentB);
 let player = {
     name : "Jim Bob",
     score : 0,
+    addPoints : function()
+    {
+        player.score += Math.floor(Math.random() * (5) + 1);
+        console.log(player.name + "'s points: " + player.score);
+    },
 }
 
 console.log(player.name + "'s points: " + player.score);
 console.log("Press the ENTER key give Jim Bob more points!");
 
-function addPoints(points)
-{
-    points.score += Math.floor(Math.random() * (5 + 1) + 1);
-    console.log(points.name + "'s points: " + points.score);
-}
-
 function getInfo(event)
 {
     let isEnterKey = event.key == "Enter";
     if(isEnterKey){
-        addPoints(player);
+        player.addPoints(player);
     }
 }
 
